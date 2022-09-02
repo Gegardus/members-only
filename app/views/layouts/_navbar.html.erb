@@ -1,0 +1,11 @@
+
+<nav class="inline-flex justify-between items-center">
+  <% if user_signed_in? %>
+    <h3 class="text-sm">Signed in as <%= current_user.name %></h3>
+    <p><%= button_to "sign out", destroy_user_session_path, method: :delete, class: "text-sm font-bold text-yellow-200 uppercase"%></p>
+    <% else %>
+    <p><%= link_to "sign in", new_user_session_path, class: "text-sm font-bold text-green-200 uppercase"%></p>
+    <% end %>     
+</nav>
+
+
